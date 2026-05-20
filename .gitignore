@@ -13,3 +13,8 @@
 .externalNativeBuild
 .cxx
 local.properties
+*.mp4
+*.mov
+*.avi
+*.mkv
+Deliverables/Demo Video/
