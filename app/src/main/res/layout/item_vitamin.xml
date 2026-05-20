@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="130dp"
+    android:layout_height="150dp"
+    android:layout_marginEnd="14dp"
+    app:cardCornerRadius="22dp"
+    app:cardElevation="3dp"
+    app:cardBackgroundColor="#F3F7F4">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="14dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="#D8F3DC">
+
+            <ImageView
+                android:id="@+id/ivVitaminIcon"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_gravity="center"
+                android:src="@android:drawable/ic_menu_gallery"
+                app:tint="@color/dark_green_primary" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/tvVitaminName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="Vitamin C"
+            android:textColor="@color/dark_green_text"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/tvVitaminDosage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="1000mg"
+            android:textColor="#7A7A7A"
+            android:textSize="13sp"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

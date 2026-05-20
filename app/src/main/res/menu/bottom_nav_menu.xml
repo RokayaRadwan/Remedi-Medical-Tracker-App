@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@id/dashboardFragment"
+        android:icon="@android:drawable/ic_menu_view"
+        android:title="Home" />
+
+    <item
+        android:id="@id/medicationListFragment"
+        android:icon="@android:drawable/ic_menu_agenda"
+        android:title="Meds" />
+
+    <item
+        android:id="@id/reminderScheduleFragment"
+        android:icon="@android:drawable/ic_menu_my_calendar"
+        android:title="Reminders" />
+
+    <item
+        android:id="@id/profileSettingsFragment"
+        android:icon="@android:drawable/ic_menu_manage"
+        android:title="Profile" />
+
+</menu>

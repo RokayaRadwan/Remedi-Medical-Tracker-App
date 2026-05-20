@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F9FA"
+    android:padding="20dp"
+    tools:context=".ui.reminderschedule.ReminderScheduleFragment">
+
+    <!-- Page Title -->
+    <TextView
+        android:id="@+id/tvReminderScheduleTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Reminder Schedule"
+        android:textColor="#1E1E1E"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Page Subtitle -->
+    <TextView
+        android:id="@+id/tvReminderScheduleSubtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="Create and manage medication reminders"
+        android:textColor="#6C757D"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@id/tvReminderScheduleTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Input Card -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardReminderInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        app:cardCornerRadius="18dp"
+        app:cardElevation="4dp"
+        app:cardBackgroundColor="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/tvReminderScheduleSubtitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="18dp">
+
+            <TextView
+                android:id="@+id/tvCreateReminderLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Create New Reminder"
+                android:textColor="#1E1E1E"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvMedicationLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="Select Medication"
+                android:textColor="#1E1E1E"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/spinnerMedication"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="6dp"
+                android:backgroundTint="#2D6A4F"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp" />
+
+            <EditText
+                android:id="@+id/etDoseAmount"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="10dp"
+                android:hint="Dose amount e.g. 500 mg"
+                android:inputType="text"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:backgroundTint="#2D6A4F" />
+
+            <Button
+                android:id="@+id/btnPickTime"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="12dp"
+                android:text="Pick Reminder Time"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#2D6A4F"
+                app:cornerRadius="14dp" />
+
+            <Spinner
+                android:id="@+id/spinnerRepeat"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="12dp" />
+
+            <Switch
+                android:id="@+id/switchReminderEnabled"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Enable Reminder"
+                android:textColor="#1E1E1E"
+                android:textSize="15sp"
+                android:checked="true" />
+
+            <Button
+                android:id="@+id/btnSaveReminder"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="14dp"
+                android:text="Save Reminder"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#40916C"
+                app:cornerRadius="14dp" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- Scheduled Reminders Title -->
+    <TextView
+        android:id="@+id/tvScheduledRemindersTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="Scheduled Reminders"
+        android:textColor="#1E1E1E"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/cardReminderInput"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Reminder List -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvReminderSchedule"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:clipToPadding="false"
+        android:paddingBottom="12dp"
+        app:layout_constraintTop_toBottomOf="@id/tvScheduledRemindersTitle"
+        app:layout_constraintBottom_toTopOf="@id/btnClearReminders"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:listitem="@layout/item_reminder_schedule" />
+
+    <!-- Empty State -->
+    <TextView
+        android:id="@+id/tvEmptyReminders"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="No reminders scheduled yet"
+        android:textColor="#888888"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="@id/rvReminderSchedule"
+        app:layout_constraintBottom_toBottomOf="@id/rvReminderSchedule"
+        app:layout_constraintStart_toStartOf="@id/rvReminderSchedule"
+        app:layout_constraintEnd_toEndOf="@id/rvReminderSchedule" />
+
+    <!-- Clear Reminders Button -->
+    <Button
+        android:id="@+id/btnClearReminders"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:text="Clear Reminders"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#D9534F"
+        app:cornerRadius="14dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
