@@ -1,1 +1,0 @@
-# Remedi-Medical-Tracker-App
